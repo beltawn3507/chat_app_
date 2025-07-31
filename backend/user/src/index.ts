@@ -21,9 +21,9 @@ redisClient.on("error",function(err){
 })
 
 const app=express();
-
+app.use(express.json())
 //api endpoints
-app.use("api/v1",UserRoutes);
+app.use("/api/v1",UserRoutes);
 
 async function startServer(){
     try{

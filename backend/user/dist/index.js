@@ -18,8 +18,9 @@ redisClient.on("error", function (err) {
     console.log(err);
 });
 const app = express();
+app.use(express.json());
 //api endpoints
-app.use("api/v1", UserRoutes);
+app.use("/api/v1", UserRoutes);
 async function startServer() {
     try {
         await redisClient.connect().then(() => console.log("connected to redis")).catch(() => console.log("Error"));

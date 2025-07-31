@@ -8,9 +8,11 @@ const connectDB=async()=>{
     }
 
     try {
-        await mongoose.connect(url,{
-            dbName:"ChatAppMicroservice"
-        });
+        await mongoose.connect(url
+        //     ,{
+        //     dbName:"ChatAppMicroservice"
+        // }
+    );
         console.log("connected to mongoDb");
     } catch (error) {
         console.log(error);
